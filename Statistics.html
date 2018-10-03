@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Question 1</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <link rel="stylesheet" href="style2.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui stackable grid">
+	<div class="two wide column">
+		<div class="adminPanel">
+			
+		</div>
+	</div>	
+
+	<div class="fourteen wide column">
+		<div class="ui stackable grid">
+		<div class="eight wide column">
+			<div class="statsPanel">
+				<div class="ui blue floating message">
+  					<center>USUAL STATS</center>
+				</div>
+					<p>Rank: Your Rank/Total Number of People</p>
+					<p>Total Marks Obtained</p>
+					<p>Percentage Marks</p>
+					<p>Topper Marks Vs Yours</p>
+					<p>Accuracy</p>
+			</div>
+		</div>
+		<div class="eight wide column">
+			<div class="statsPanel">
+				<div class="ui orange inverted floating message">
+  					<center>STATS ABOUT THIS EXAM</center>
+				</div>
+				<div class="ui floating message">
+  					<p>
+  						<div class="ui indicating progress" id="example2">
+  							<div class="bar"></div>
+  							<div class="label">Course Completion</div>
+						</div>
+  					</p>
+  					<p>Tests Done/Total Testa = 23/30</p>
+				</div>	
+				<table class="ui stackable celled table">
+					  	<thead>
+						    <tr>
+						    	<th>Topic</th>
+						    	<th>Age</th>
+						    	<th>Job</th>
+						    	<th>Name</th>
+						    	<th>Age</th>
+						    	<th>Job</th>
+							</tr>
+						</thead>
+					  <tbody>
+					    <tr>
+					      	<td>James</td>
+					      	<td>24</td>
+					      	<td>Engineer</td>
+					      	<td>James</td>
+					      	<td>24</td>
+					      	<td>Engineer</td>		
+					    </tr>
+					  </tbody>
+				</table>
+			</div>
+		</div>
+
+		<div class="eight wide column">
+			<div class="statsPanel">
+				<table class="ui stackable celled table">
+				<div class="ui floating message">
+  					<p>TOP FIVE TOPPERS IN THIS TEST</p>
+				</div>	
+					  	<thead>
+						    <tr>
+						    	<th>Topic</th>
+						    	<th>Age</th>
+						    	<th>Job</th>
+							</tr>
+						</thead>
+					  <tbody>
+					    <tr>
+					      	<td>James</td>
+					      	<td>24</td>
+					      	<td>Engineer</td>		
+					    </tr>
+					    <tr>
+					      	<td>James</td>
+					      	<td>24</td>
+					      	<td>Engineer</td>		
+					    </tr>
+					    <tr>
+					      	<td>James</td>
+					      	<td>24</td>
+					      	<td>Engineer</td>		
+					    </tr>
+					    <tr>
+					      	<td>James</td>
+					      	<td>24</td>
+					      	<td>Engineer</td>		
+					    </tr>
+					    <tr>
+					      	<td>James</td>
+					      	<td>24</td>
+					      	<td>Engineer</td>		
+					    </tr>
+					  </tbody>
+				</table>
+			</div>
+		</div>
+		<div class="eight wide column">
+			<div class="statsPanel">
+				<div class="ui red floating message">
+  					<center>ANSWER STATISTICS</center>
+				</div>
+				<div id="piechart"></div>
+			</div>
+		</div>	
+		</div>
+	</div>
+</div>		
+</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	$('#example2').progress({percent: 60});
+
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+		  var data = google.visualization.arrayToDataTable([
+		  ['Questions', 'Results'],
+		  ['Attempted', 8],
+		  ['Correct', 5],
+		  ['Incorrect', 3],
+		  ['Left', 2]
+		]);
+		
+		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+		chart.draw(data);
+		}
+		var maxHeight = 0;
+
+$(".statsPanel").each(function(){
+   if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+});
+
+$(".statsPanel").height(maxHeight);
+</script>
+
+</html>

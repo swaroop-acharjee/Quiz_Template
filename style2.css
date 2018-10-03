@@ -1,0 +1,29 @@
+		body
+    	{
+    		max-width: 					99%;
+    	}
+    	.statsPanel
+    	{
+    		background-color: 			#e5f4fc; 
+    		min-height: 				50vh;
+    		max-width: 					100%;
+    		margin:               		1em auto;
+    		padding: 					5%;
+    		border-radius: 				5px;
+    		border: 					1px solid #66cbff;
+    	}
+    	.statsPanel table
+    	{
+    		max-width: 					100%;
+    	}
+    	.adminPanel
+    	{
+    		background-color: 			green;
+    		min-height: 				140vh;
+    	}
+    	#piechart
+    	{
+    		min-width: 						100%;
+    		min-height: 					30vh;	
+    		transition:						3s; 
+    	}	
