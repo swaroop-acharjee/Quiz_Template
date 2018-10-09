@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+    <title>Statistics</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.css"/>
+    <link rel="stylesheet" href="styleStats-cdm.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/1.11.8/semantic.min.js"></script>
+</head>
+<body>
+<div class="ui stackable grid">
+	<div class="two wide column">
+		<div class="adminPanel">
+
+		</div>
+	</div>
+
+	<div class="fourteen wide column">
+		<div class="ui stackable grid">
+				<div class="ten wide centered column flexbox-container">
+					<div class="ui raised very padded text container segment statsPanel">
+						<div class="ui blue inverted floating message">
+		  					<h2 class="ui">Basic Statistics</h2>
+						</div>
+							<p>Rank: Your Rank/Total Number of People</p>
+							<p>Total Marks Obtained</p>
+							<p>Percentage Marks</p>
+							<p>Topper Marks Vs Yours</p>
+							<p>Accuracy</p>
+					</div>
+				</div>
+		</div>
+	</div>
+</div>
+</body>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+	$('#example2').progress({percent: 60});
+
+		google.charts.load('current', {'packages':['corechart']});
+		google.charts.setOnLoadCallback(drawChart);
+		function drawChart() {
+		  var data = google.visualization.arrayToDataTable([
+		  ['Questions', 'Results'],
+		  ['Attempted', 8],
+		  ['Correct', 5],
+		  ['Incorrect', 3],
+		  ['Left', 2]
+		]);
+
+		var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+		chart.draw(data);
+		}
+		var maxHeight = 0;
+
+$(".statsPanel").each(function(){
+   if ($(this).height() > maxHeight) { maxHeight = $(this).height(); }
+});
+
+$(".statsPanel").height(maxHeight);
+</script>
+
+</html>
